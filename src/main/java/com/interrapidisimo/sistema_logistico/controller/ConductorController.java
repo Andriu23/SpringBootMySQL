@@ -1,4 +1,3 @@
-/*
 package com.interrapidisimo.sistema_logistico.controller;
 
 
@@ -31,23 +30,27 @@ public class ConductorController {
     }
 
     @GetMapping("/{id}")
-    public Conductor GetConductoresById(@PathVariable String id) {
+    public Conductor getConductoresById(@PathVariable Long id) {
         return conductorService.findById(id);
     }
 
     @PostMapping
-    public Conductor CreateConductor(@RequestBody Conductor conductor) {
+    public Conductor createConductor(@RequestBody Conductor conductor) {
         return conductorService.save(conductor);
     }
 
+    @GetMapping("/nombre/{nombre}")
+    public List<Conductor> getConductorByNombre(@PathVariable String nombre) {
+        return conductorService.findByNombreContaining(nombre);
+    }
+
     @PutMapping("/{id}")
-    public Conductor updateConductor(@PathVariable String id, @RequestBody Conductor conductor) {
+    public Conductor updateConductor(@PathVariable Long id, @RequestBody Conductor conductor) {
         return conductorService.update(id, conductor);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteConductor(@PathVariable String id) {
+    public void deleteConductor(@PathVariable Long id) {
         conductorService.deleteById(id);
     }
 }
- */

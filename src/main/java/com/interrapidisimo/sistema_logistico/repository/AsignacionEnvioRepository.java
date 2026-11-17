@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface AsignacionEnvioRepository extends JpaRepository<AsignacionEnvio, Long>{
 
-    List<AsignacionEnvio> findByEnvio_id(String envioId);
-    List<AsignacionEnvio> findByConductor_id(String conductorId);
+    List<AsignacionEnvio> findByEnvio_id(Long envioId);
+    List<AsignacionEnvio> findByConductor_id(Long conductorId);
 }
