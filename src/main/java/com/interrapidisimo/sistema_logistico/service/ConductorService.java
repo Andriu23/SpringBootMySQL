@@ -1,4 +1,4 @@
-package com.interrapidisimo.sistema_logistico.service;
+/*package com.interrapidisimo.sistema_logistico.service;
 
 import com.interrapidisimo.sistema_logistico.model.Conductor;
 
@@ -14,3 +14,4 @@ public interface ConductorService {
     List<Conductor> findByLicencia(String licencia);
 
 }
+ */

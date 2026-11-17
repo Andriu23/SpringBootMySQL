@@ -1,4 +1,4 @@
-package com.interrapidisimo.sistema_logistico.service;
+/*package com.interrapidisimo.sistema_logistico.service;
 
 
 import com.interrapidisimo.sistema_logistico.model.Envio;
@@ -67,3 +67,4 @@ public class EnvioServiceMemoryImp implements EnvioService{
                 .toList();
     }
 }
+*/

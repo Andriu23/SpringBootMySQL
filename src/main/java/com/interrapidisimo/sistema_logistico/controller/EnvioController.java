@@ -1,5 +1,6 @@
 package com.interrapidisimo.sistema_logistico.controller;
 
+import com.interrapidisimo.sistema_logistico.model.AsignacionEnvio;
 import com.interrapidisimo.sistema_logistico.model.Envio;
 import com.interrapidisimo.sistema_logistico.service.EnvioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class EnvioController {
     }
 
     @GetMapping("/{id}")
-    public Envio getEnvioById(@PathVariable String id) {
+    public Envio getEnvioById(@PathVariable Long id) {
         return envioService.findById(id);
     }
 
@@ -39,12 +40,25 @@ public class EnvioController {
     }
 
     @PutMapping("/{id}")
-    public Envio updateEnvio(@PathVariable String id, @RequestBody Envio envio) {
+    public Envio updateEnvio(@PathVariable Long id, @RequestBody Envio envio) {
         return envioService.update(id, envio);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteEnvio(@PathVariable String id) {
+    public void deleteEnvio(@PathVariable Long id) {
         envioService.deleteById(id);
+    }
+
+    @PostMapping("/{envioId}/asignar")
+    public AsignacionEnvio asignarConductor(@PathVariable Long envioId,
+                                               @RequestParam Long conductorId,
+                                               @RequestParam String responsable,
+                                               @RequestParam(required = false)String observaciones) {
+        return envioService.asignarConductorAEnvio(
+                envioId,
+                conductorId,
+                responsable,
+                observaciones
+        );
     }
 }

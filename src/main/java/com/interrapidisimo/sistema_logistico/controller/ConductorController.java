@@ -1,4 +1,6 @@
+/*
 package com.interrapidisimo.sistema_logistico.controller;
+
 
 import com.interrapidisimo.sistema_logistico.model.Conductor;
 import com.interrapidisimo.sistema_logistico.service.ConductorService;
@@ -48,3 +50,4 @@ public class ConductorController {
         conductorService.deleteById(id);
     }
 }
+ */
